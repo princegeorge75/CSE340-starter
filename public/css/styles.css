@@ -1,6 +1,101 @@
-/******* Change Box Model ***************/
-*,
-*:before,
-*:after {
-  box-sizing: border-box;
+body{
+font-family: Arial, sans-serif;
+margin:0;
+background:#f3f3f3;
+}
+
+main{
+padding:1rem;
+}
+
+.top-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.nav-menu{
+list-style:none;
+padding:0;
+margin:10px 0;
+display:flex;
+justify-content:space-around;
+background:#2e2e3e;
+}
+
+.nav-menu a{
+color:white;
+text-decoration:none;
+padding:10px;
+display:block;
+}
+
+.hero{
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+.hero img{
+max-width:100%;
+}
+
+.hero-text{
+color:#009cc2;
+}
+
+.hero-text button{
+background:#009cc2;
+color:white;
+border:none;
+padding:10px;
+margin-top:10px;
+cursor:pointer;
+}
+
+.reviews-upgrades{
+display:flex;
+flex-direction:column;
+gap:20px;
+}
+
+.upgrade-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:15px;
+}
+
+.upgrade{
+background:#1fa3b6;
+padding:10px;
+text-align:center;
+}
+
+.upgrade img{
+width:60px;
+}
+
+footer{
+margin-top:20px;
+}
+
+@media screen and (min-width:768px){
+
+.hero{
+flex-direction:row;
+justify-content:space-between;
+}
+
+.reviews-upgrades{
+flex-direction:row;
+}
+
+.reviews{
+flex:1;
+}
+
+.upgrades{
+flex:1;
+}
+
 }
