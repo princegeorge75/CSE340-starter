@@ -1,6 +1,7 @@
 body{
 font-family: Arial, sans-serif;
-margin:0;
+margin: 20px solid #33333511;
+border: 20px solid #29292c02;
 background:#f3f3f3;
 }
 
@@ -42,6 +43,8 @@ max-width:100%;
 
 .hero-text{
 color:#009cc2;
+background: #c2e0e7;
+border: solid #c6e3eb;
 }
 
 .hero-text button{
