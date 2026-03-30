@@ -1,104 +1,224 @@
-body{
-font-family: Arial, sans-serif;
-margin: 20px solid #33333511;
-border: 20px solid #29292c02;
-background:#f3f3f3;
+/* ====== GLOBAL STYLES ====== */
+* {
+  box-sizing: border-box;
 }
 
-main{
-padding:1rem;
+body {
+  margin: 0;
+  font-family: "Segoe UI", Arial, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
 }
 
-.top-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
+main {
+  padding: 1rem;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.nav-menu{
-list-style:none;
-padding:0;
-margin:10px 0;
-display:flex;
-justify-content:space-around;
-background:#2e2e3e;
+/* ====== HEADER ====== */
+.top-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
 }
 
-.nav-menu a{
-color:white;
-text-decoration:none;
-padding:10px;
-display:block;
+.top-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
 }
 
-.hero{
-display:flex;
-flex-direction:column;
-align-items:center;
+.top-header a {
+  text-decoration: none;
+  color: #333;
+  font-weight: bold;
 }
 
-.hero img{
-max-width:100%;
+/* ====== NAVIGATION ====== */
+.nav-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-self: auto;
+  background-color: #2c2f36;
 }
 
-.hero-text{
-color:#009cc2;
-background: #c2e0e7;
-border: solid #c6e3eb;
+.nav-menu li {
+  list-style: none;
 }
 
-.hero-text button{
-background:#009cc2;
-color:white;
-border:none;
-padding:10px;
-margin-top:10px;
-cursor:pointer;
+.nav-menu a {
+  display: block;
+  padding: 0.9rem;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background 0.3s ease;
 }
 
-.reviews-upgrades{
-display:flex;
-flex-direction:column;
-gap:20px;
+
+.nav-menu a:hover {
+  background-color: #1fa3b6;
 }
 
-.upgrade-grid{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:15px;
+/* ====== HERO SECTION ====== */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem 0;
 }
 
-.upgrade{
-background:#1fa3b6;
-padding:10px;
-text-align:center;
+.hero-text {
+  color: #1fa3b6;
+  text-align: center;
 }
 
-.upgrade img{
-width:60px;
+.hero-text h2 {
+  margin-bottom: 0.5rem;
 }
 
-footer{
-margin-top:20px;
+.hero-text ul {
+  padding-left: 1.2rem;
+  text-align: left;
 }
 
-@media screen and (min-width:768px){
-
-.hero{
-flex-direction:row;
-justify-content:space-between;
+.hero-text button {
+  background-color: #1fa3b6;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  margin-top: 0.5rem;
+  cursor: pointer;
+  border-radius: 4px;
 }
 
-.reviews-upgrades{
-flex-direction:row;
+.hero-text button:hover {
+  background-color: #168b9a;
 }
 
-.reviews{
-flex:1;
+.hero-image img {
+  max-width: 100%;
+  height: auto;
 }
 
-.upgrades{
-flex:1;
+/* ====== REVIEWS & UPGRADES ====== */
+.reviews-upgrades {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
 }
+
+/* Reviews */
+.reviews ul {
+  padding-left: 1.2rem;
+}
+
+.reviews li {
+  margin-bottom: 0.5rem;
+}
+
+/* Upgrades */
+.upgrade-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.upgrade {
+  background-color: #1fa3b6;
+  padding: 1rem;
+  text-align: center;
+  border-radius: 6px;
+}
+
+.upgrade img {
+  width: 60px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.upgrade a {
+  display: block;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* ====== INVENTORY GRID ====== */
+#inv-display {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1rem;
+}
+
+#inv-display li {
+  background-color: #fff;
+  border-radius: 8px;
+  padding: 1rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+#inv-display li:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ====== FOOTER ====== */
+footer {
+  background-color: #2c2f36;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
+
+/* ====== DESKTOP (MEDIA QUERY) ====== */
+@media screen and (min-width: 768px) {
+
+  .hero {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .hero-text {
+    text-align: left;
+    max-width: 40%;
+  }
+
+  .hero-image {
+    max-width: 55%;
+  }
+
+  .reviews-upgrades {
+    flex-direction: row;
+  }
+
+  .reviews, .upgrades {
+    flex: 1;
+  }
+
+  .upgrade-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  #inv-display {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+  }
 
 }
