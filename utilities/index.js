@@ -58,4 +58,47 @@ Util.buildClassificationGrid = async function(data){
   return grid
 }
 
+// Vehicle Details
+Util.buildVehicleDetail = function (data) {
+  return `
+    <div class="vehicle-detail">
+
+      <!-- LEFT SIDE -->
+      <div class="vehicle-left">
+        <img src="${data.inv_image}" alt="${data.inv_make} ${data.inv_model}" class="main-image">
+
+        <div class="thumbnail-row">
+          <img src="${data.inv_thumbnail}" alt="thumb">
+          <img src="${data.inv_thumbnail}" alt="thumb">
+          <img src="${data.inv_thumbnail}" alt="thumb">
+        </div>
+      </div>
+
+      <!-- RIGHT SIDE -->
+      <div class="vehicle-right">
+        <h2>${data.inv_year} ${data.inv_make} ${data.inv_model}</h2>
+
+        <p class="price">$${new Intl.NumberFormat("en-US").format(data.inv_price)}</p>
+
+        <ul class="vehicle-specs">
+          <li><strong>Mileage:</strong> ${new Intl.NumberFormat("en-US").format(data.inv_miles)} miles</li>
+          <li><strong>Color:</strong> ${data.inv_color}</li>
+          <li><strong>Description:</strong> ${data.inv_description}</li>
+        </ul>
+
+        <button class="btn-primary">Contact Dealer</button>
+      </div>
+
+    </div>
+  `
+}
+
+/* ****************************************
+ * Middleware For Handling Errors
+ * Wrap other function in this for 
+ * General Error Handling
+ **************************************** */
+Util.handleErrors = fn => (req, res, next) => Promise.resolve(fn(req, res, next)).catch(next)
+
+
 module.exports = Util
