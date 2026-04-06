@@ -22,8 +22,8 @@ const utilities = require("./utilities/")
 /* ***********************
  * Middleware
  * ************************/
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
 
 app.use(session({
   store: new (require('connect-pg-simple')(session))({
