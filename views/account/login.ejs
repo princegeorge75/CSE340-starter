@@ -1,4 +1,11 @@
 <%- messages() %>
+<% if (errors) { %>
+  <ul class="notice">
+    <% errors.array().forEach(error => { %>
+      <li><%= error.msg %></li>
+    <% }) %>
+  </ul>
+<% } %>
 
 <h1><%= title %></h1>
 
@@ -10,10 +17,11 @@
       type="email" 
       id="account_email" 
       name="account_email" 
-      required
+      required value="<%= locals.account_email %>"
     >
 
     <label for="account_password">Password</label>
+    <span>Password must be at least 12 characters long, with 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character.</span>
     <input 
       type="password" 
       id="account_password" 
